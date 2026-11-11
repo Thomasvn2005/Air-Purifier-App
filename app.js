@@ -2,8 +2,8 @@
 // CẤU HÌNH MQTT
 // =====================================================
 
-const BROKER_URL = "ws://broker.emqx.io:8083/mqtt";
-
+//const BROKER_URL = "ws://broker.emqx.io:8083/mqtt";
+const BROKER_URL = "wss://broker.emqx.io:8084/mqtt";
 // Client ID ngẫu nhiên
 const clientId = "web_client_" + Math.random().toString(16).substr(2, 8);
 
