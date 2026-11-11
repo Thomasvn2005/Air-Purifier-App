@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIÁM SÁT NHIỆT ĐỘ - ĐỘ ẨM</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MQTT.js library -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <h1>GIÁM SÁT NHIỆT ĐỘ - ĐỘ ẨM</h1>
+
+    <div class="box">
+        <!-- Cấu hình Topic -->
+        <h2>Cấu hình Topic</h2>
+
+        <div class="topic-grid">
+            <div class="form-row">
+                <label for="subTopic">Topic Subscribe</label>
+                <input type="text" id="subTopic" value="esp32/data" placeholder="VD: esp32/data">
+                <span class="hint">Nhận dữ liệu cảm biến</span>
+            </div>
+
+            <div class="form-row">
+                <label for="pubTopic">Topic Publish</label>
+                <input type="text" id="pubTopic" value="esp32" placeholder="VD: esp32">
+                <span class="hint">Gửi lệnh điều khiển</span>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button class="btn-sub" id="btnSubscribe">Subscribe</button>
+            <button class="btn-unsub" id="btnUnsubscribe">Unsubscribe</button>
+        </div>
+
+        <hr>
+
+        <!-- Dữ liệu cảm biến từ ESP32 -->
+        <h2>Dữ liệu cảm biến</h2>
+
+        <div class="data">
+            🌡️ Nhiệt độ:
+            <span id="temperature" class="value">--</span> °C
+        </div>
+
+        <div class="data">
+            💧 Độ ẩm:
+            <span id="humidity" class="value">--</span> %
+        </div>
+
+        <hr>
+
+        <!-- Điều khiển quạt -->
+        <h2>Điều khiển quạt</h2>
+
+        <button class="btn-on" id="btnFanOn">
+            🟢 BẬT QUẠT
+        </button>
+
+        <button class="btn-off" id="btnFanOff">
+            🔴 TẮT QUẠT
+        </button>
+
+        <div id="fanStatus">
+            Trạng thái quạt: --
+        </div>
+
+        <hr>
+
+        <!-- Trạng thái MQTT -->
+        <p id="status">🔄 Đang kết nối MQTT...</p>
+        <p id="subStatus">Chưa subscribe topic nào</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

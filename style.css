@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.box {
+    width: 440px;
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 28px 24px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #222;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+}
+
+/* ===== Cấu hình Topic - bố cục 2 cột ===== */
+.topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-row label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.form-row input {
+    padding: 10px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fafafa;
+}
+
+.form-row input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    background: #fff;
+}
+
+.form-row .hint {
+    font-size: 11px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Nút Subscribe / Unsubscribe */
+.btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.btn-sub,
+.btn-unsub {
+    flex: 1;
+    padding: 11px 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-sub {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-unsub {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-sub:hover {
+    background: #138496;
+}
+
+.btn-unsub:hover {
+    background: #5a6268;
+}
+
+/* Dữ liệu cảm biến */
+.data {
+    font-size: 22px;
+    margin: 14px 0;
+}
+
+.value {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Nút điều khiển quạt */
+button {
+    padding: 12px 25px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.btn-on {
+    background: #28a745;
+    color: white;
+}
+
+.btn-off {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-on:hover {
+    background: #218838;
+}
+
+.btn-off:hover {
+    background: #c82333;
+}
+
+.btn-on:disabled,
+.btn-off:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#fanStatus {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+#status {
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#subStatus {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #777;
+}
+
+hr {
+    margin: 22px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive: màn hình nhỏ xếp dọc */
+@media (max-width: 480px) {
+    .topic-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .box {
+        padding: 20px 16px;
+    }
+}
